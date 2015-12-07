@@ -1,0 +1,18 @@
+{
+  "build_entry_point": "",
+  "docsets_to_publish": [
+    {
+      "docset_name": "CapsToOpsTest_EMS",
+      "build_output_subfolder": "CapsToOpsTest_EMS/v1",
+      "locale": "en-us",
+      "version": 0,
+      "open_to_public_contributors": true,
+      "type_mapping": {
+        "Conceptual": "Content"
+      }
+    }
+  ],
+  "notification_subscribers": [
+    "jasoz@microsoft.com"
+  ]
+}
