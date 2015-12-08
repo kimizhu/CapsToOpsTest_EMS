@@ -1,3 +1,14 @@
+---
+description: na
+search: na
+title: FastTrack Center Benefit for Enterprise Mobility Suite
+ms.service: na
+ms.tgt_pltfrm: na
+ms.topic: article
+ms.date: 2015-10-30
+ms.author: faaa7872-8192-4a1a-b627-792c5bba6416
+---
+# FastTrack Center Benefit for Enterprise Mobility Suite
 Microsoft FastTrack for Enterprise Mobility Suite provides remote deployment assistance for Azure Active Directory Premium, Intune and Azure Rights Management.
 
 For more information, see:

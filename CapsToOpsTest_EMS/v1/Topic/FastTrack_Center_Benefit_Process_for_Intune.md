@@ -1,3 +1,14 @@
+---
+description: na
+search: na
+title: FastTrack Center Benefit Process for Intune
+ms.service: na
+ms.tgt_pltfrm: na
+ms.topic: article
+ms.date: 2015-11-30
+ms.author: na
+---
+# FastTrack Center Benefit Process for Intune
 If your organization is eligible for the Microsoft Intune service benefit, you can work remotely with Microsoft specialists to get your Microsoft Intune environment ready for use.
 
 Microsoft Intune is the part of Microsoft’s Enterprise Mobility Suite (EMS), which provides the Enterprise Mobility Management (EMM) capabilities, including Mobile Device Management (MDM) and Mobile Application Management (MAM).  You can use Microsoft Intune to enable your employees to be productive on mobile devices by provisioning devices, configuring devices, and deploying mobile apps.  You can additionally use Microsoft Intune to help protect your corporate data by monitoring device compliance, protecting mobile applications and data, and integrating with Azure AD to control access to corporate services.

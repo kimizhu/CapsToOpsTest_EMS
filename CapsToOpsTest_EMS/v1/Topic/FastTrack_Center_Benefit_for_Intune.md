@@ -1,3 +1,14 @@
+---
+description: na
+search: na
+title: FastTrack Center Benefit for Intune
+ms.service: na
+ms.tgt_pltfrm: na
+ms.topic: article
+ms.date: 2015-11-30
+ms.author: na
+---
+# FastTrack Center Benefit for Intune
 You can use the service benefit when you purchase at least 150 licenses for Microsoft Intune in an eligible plan. The service benefit lets you work with Microsoft specialists to assess, remediate, and enable eligible services.
 
 This article provides details about plan and service eligibility for the service benefit.
