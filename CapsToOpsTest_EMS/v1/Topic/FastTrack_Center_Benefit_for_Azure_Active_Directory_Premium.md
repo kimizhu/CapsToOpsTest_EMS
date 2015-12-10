@@ -7,6 +7,7 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 2015-10-27
 ms.author: na
+capscontentguid: cf7f7550-2632-4bc2-aac4-04e988b1c4db
 ---
 # FastTrack Center Benefit for Azure Active Directory Premium
 You can use the FastTrack Center Benefit when you purchase at least 150 licenses for Microsoft AADP in an eligible plan. The FastTrack Center Benefit lets you work with Microsoft specialists to assess, remediate, and enable eligible services. This article provides details about plan and service eligibility for the FastTrack Center Benefit.
