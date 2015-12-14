@@ -1,13 +1,12 @@
 ---
 description: na
+keywords: na
+pagetitle: FastTrack Center Benefit Process for Azure Active Directory Premium 
 search: na
-title: FastTrack Center Benefit Process for Azure Active Directory Premium 
-ms.service: na
+ms.date: 2015-11-25
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.date: 2015-11-25
-ms.author: na
-capscontentguid: f1e8d94d-ce42-4d4c-a25b-0f28b93a9e10
+ms.assetid: f1e8d94d-ce42-4d4c-a25b-0f28b93a9e10
 ---
 # FastTrack Center Benefit Process for Azure Active Directory Premium 
 If your organization is eligible for the FastTrack Center Benefit for Microsoft Azure AD Premium, you can work remotely with Microsoft specialists to get your Microsoft Azure AD Premium environment ready for use. To learn whether your organization is eligible, see [FastTrack Center Benefit for Azure Active Directory Premium](../Topic/FastTrack_Center_Benefit_for_Azure_Active_Directory_Premium.md).

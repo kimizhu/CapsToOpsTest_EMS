@@ -1,13 +1,12 @@
 ---
 description: na
+keywords: na
+pagetitle: FastTrack Center Benefit Process for Azure Rights Management
 search: na
-title: FastTrack Center Benefit Process for Azure Rights Management
-ms.service: na
+ms.date: 2015-11-25
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.date: 2015-11-25
-ms.author: na
-capscontentguid: 4d85708b-a837-4865-aef9-0dd4488b23e9
+ms.assetid: 4d85708b-a837-4865-aef9-0dd4488b23e9
 ---
 # FastTrack Center Benefit Process for Azure Rights Management
 If your organization is eligible for the FastTrack Center Benefit for Microsoft Azure Rights Management, you can work remotely with Microsoft specialists to get your Azure RMS environment ready for use. To learn whether your organization is eligible, see [FastTrack Center Benefit for Azure Rights Management](../Topic/FastTrack_Center_Benefit_for_Azure_Rights_Management.md).

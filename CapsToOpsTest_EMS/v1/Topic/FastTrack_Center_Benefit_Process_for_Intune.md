@@ -1,13 +1,13 @@
 ---
 description: na
+keywords: na
+pagetitle: FastTrack Center Benefit Process for Intune
 search: na
-title: FastTrack Center Benefit Process for Intune
-ms.service: na
+ms.date: 2015-11-30
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.date: 2015-11-30
-ms.author: na
-capscontentguid: 0188472b-6bf8-41a5-a4f9-7134180c9c22
+ms.assetid: 0188472b-6bf8-41a5-a4f9-7134180c9c22
+robots: noindex
 ---
 # FastTrack Center Benefit Process for Intune
 If your organization is eligible for the Microsoft Intune service benefit, you can work remotely with Microsoft specialists to get your Microsoft Intune environment ready for use.

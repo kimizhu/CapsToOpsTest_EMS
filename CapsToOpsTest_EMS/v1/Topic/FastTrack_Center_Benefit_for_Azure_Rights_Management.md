@@ -1,13 +1,13 @@
 ---
 description: na
+keywords: na
+pagetitle: FastTrack Center Benefit for Azure Rights Management
 search: na
-title: FastTrack Center Benefit for Azure Rights Management
-ms.service: na
+ms.author: f224bb9b442140c797af0e59b80f0d33
+ms.date: 2015-10-30
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.date: 2015-10-30
-ms.author: f224bb9b442140c797af0e59b80f0d33
-capscontentguid: 6eef2efd-a2b6-4d60-894e-3792f6fe73cc
+ms.assetid: 6eef2efd-a2b6-4d60-894e-3792f6fe73cc
 ---
 # FastTrack Center Benefit for Azure Rights Management
 You can use the FastTrack Center Benefit when you purchase at least 150 licenses for Azure RMS in an eligible plan. The FastTrack Center Benefit lets you work with Microsoft specialists to assess, remediate, and enable eligible services. This article provides details about plan and service eligibility for the FastTrack Center Benefit.
