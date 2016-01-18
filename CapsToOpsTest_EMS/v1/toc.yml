@@ -19,9 +19,9 @@
       href: 
       homepage:
       items:
-        - name: ADAL
+        - name: Microsoft.IdentityModel.Clients.ActiveDirectory 
           href: 
           homepage:
-        - name: ADAL_internal
+        - name: Microsoft.IdentityModel.Clients.ActiveDirectory.Internal
           href: 
           homepage: 
