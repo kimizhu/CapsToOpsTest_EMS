@@ -15,3 +15,13 @@
     - name: RMS
       href: /CapsToOpsTest_RMS/v1/Topic/
       homepage: /CapsToOpsTest_RMS/v1/Topic/Azure_Rights_Management.html
+    - name: Reference
+      href: 
+      homepage:
+      items:
+        - name: ADAL
+          href: 
+          homepage:
+        - name: ADAL_internal
+          href: 
+          homepage: 
