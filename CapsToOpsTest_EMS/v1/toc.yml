@@ -10,8 +10,8 @@
       href: /CapsToOpsTest_ATA/v1/Topic/
       homepage: /CapsToOpsTest_ATA/v1/Topic/Microsoft_Advanced_Threat_Analytics.html
     - name: Intune
-      href: /CapsToOpsTest_Intune/v1/Topic/
-      homepage: /CapsToOpsTest_Intune/v1/Microsoft_Intune_App_SDK.html
+      href: /CapsToOpsTest_MicrosoftInTune/v1/Topic/
+      homepage: /CapsToOpsTest_MicrosoftInTune/v1/Microsoft_Intune_App_SDK.html
     - name: RMS
       href: /CapsToOpsTest_AzureRight/v1/Topic/
       homepage: /CapsToOpsTest_AzureRight/v1/Topic/Azure_Rights_Management.html
