@@ -13,8 +13,8 @@
       href: /CapsToOpsTest_Intune/v1/Topic/
       homepage: /CapsToOpsTest_Intune/v1/Microsoft_Intune_App_SDK.html
     - name: RMS
-      href: /CapsToOpsTest_RMS/v1/Topic/
-      homepage: /CapsToOpsTest_RMS/v1/Topic/Azure_Rights_Management.html
+      href: /CapsToOpsTest_AzureRight/v1/Topic/
+      homepage: /CapsToOpsTest_AzureRight/v1/Topic/Azure_Rights_Management.html
     - name: Reference
       href: 
       homepage:
