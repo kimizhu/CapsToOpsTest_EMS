@@ -15,7 +15,8 @@
         "files": [
           "**/*.png",
           "**/*.jpg",
-          "**/*.html"
+          "**/*.html",
+          "**/*.css"
         ],
         "exclude": [
           "**/obj/**"
