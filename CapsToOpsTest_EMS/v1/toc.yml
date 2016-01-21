@@ -12,7 +12,7 @@
     - name: Intune
       href: /CapsToOpsTest_MicrosoftInTune/v1/Topic/
       homepage: /CapsToOpsTest_MicrosoftInTune/v1/Microsoft_Intune_App_SDK.html
-    - name: RMS
+    - name: Right Management Service
       href: /CapsToOpsTest_AzureRight/v1/Topic/
       homepage: /CapsToOpsTest_AzureRight/v1/Topic/Azure_Rights_Management.html
     - name: Reference
