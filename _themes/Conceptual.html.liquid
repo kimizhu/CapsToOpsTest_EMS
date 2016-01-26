@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<!-- saved from url=(0055)http://weareminky.com/share/ms/docs/conceptual/example/ -->
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="ms.pagetype" content="conceptual" />
+    <meta name="toc" content="{{ page.toc_rel }}" />
+    <meta name="breadcrumb" content="{{ page.breadcrumb_path }}" />
+    <title>{{ page.title }}</title>
+    {% style _themes/css/conceptual.css %}
+    {% js _themes/javascript/jquery-2.1.4.min.js %}
+    {% js _themes/javascript/docs.js %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <header id="header" ms.pgarea="header">
+      <div id="common-nav-placeholder">
+        <div class="container">
+          <h3>Microsoft</h3>
+          <h5>Common Nav Placeholder</h5>
+        </div>
+      </div>
+      
+      <div id="sub-header" class="container" ms.cmpgrp="breadcrumb">
+        <ul class="breadcrumbs"></ul>
+      </div>
+    </header>
+
+    <div class="container" ms.pgarea="body">
+
+      <aside id="social" ms.cmpgrp="social">
+        <ol class="social-actions">
+          <li class="menu-theme">
+            <div class="dropdown-container">
+              <div class="dropdown">
+                <select>
+                  <option value="">Light</option>
+                  <option value="theme-night">Dark</option>
+                  <option value="theme-hot-dog">Hot Dog</option>
+                </select>
+              </div>
+            </div>
+          </li>
+          <li><a href="" class="button button-small"><span class="icon icon-comments"></span> Comments</a></li>
+          <li><a href="{{ page.content_git_url }}" class="button button-small"><span class="icon icon-edit"></span> Edit</a></li>
+          <li><a href="" class="button button-small"><span class="icon icon-feedback"></span> Feedback</a></li>
+          <li><a href="#" class="button button-small sharebutton"><span class="icon icon-share"></span> Share</a></li>
+          <div class="share-container">
+            <li><a href="" class="share-twitter"><i class="fa fa-fw">&#xf099</i> Twitter</a></li>
+            <li><a href="" class="share-facebook"><i class="fa fa-fw">&#xf09a</i> Facebook</a></li>
+            <!--<li><a href="" class="share-slack"><i class="fa fa-fw">&#xf198</i> Slack</a></li>-->
+          </div>
+        </ol>
+
+        <div id="menu-expand">
+          <h6>+ Options</h6>
+        </div>
+      </aside>
+      
+      <div id="toc" ms.cmpgrp="left toc">
+        <nav id="sidebar"></nav>
+      </div>
+      
+      <div id="menu-nav" class="dropdown-container">
+        <div class="dropdown dropdown-full">
+          <select>
+            <optgroup label="Introduction">
+              <option value="problems-azure-rms-solves">Problems Azure RMS Solves</option>
+              <option value="azure-rms-in-action">Azure RMS in Action</option>
+              <option value="how-azure-rms-works">How Azure RMS Works</option>
+            </optgroup>
+            <optgroup label="And...">
+              <option value="so">So</option>
+              <option value="on">On</option>
+            </optgroup>
+          </select>
+        </div>
+      </div>
+
+      <article id="main">
+        <h1>{{ page.title }}</h1>
+        <div id="metadata" ms.cmpgrp="page info">
+          <a href="" class="avatar"><img src="{{ page._op_gitContributorInformation.author.profile_url }}.png" alt="Author Name"></a>
+          <div class="info">
+            <span class="name"><a href="{{ page._op_gitContributorInformation.author.profile_url }}">{{ page._op_gitContributorInformation.author.display_name}}</a></span>
+            <div class="meta">
+              <time datetime="" class="date">{{ page._op_gitContributorInformation.update_at }}</time>
+              <time datetime="" class="reading-time">{{ page.wordCount | divided_by: 200 }} min</time>
+              <ul class="contributors">
+                {% for contributor in page._op_gitContributorInformation.contributors %}
+                <li><a href="{{ contributor.profile_url }}"><img src="{{ contributor.profile_url }}.png" alt="{{ contributor.display_name }}" class="contributor-avatar"></a></li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div> 
+        </div>
+
+        <aside class="toc" ms.cmpgrp="intopic toc">
+          <h5>In this article</h5>
+        </aside>
+
+        {{ content }}
+
+      </article>
+    </div>
+
+    <footer id="footer" ms.pgarea="footer">
+      <div class="container">
+        <a href="http://www.microsoft.com/" class="logo">{% img _themes/images/logo-ms.png Microsoft %}</a>
+        <ul class="links" ms.cmpgrp="footer link">
+          <li><a href="">Contact Us</a></li>
+          <li><a href="">Privacy Statement</a></li>
+          <li><a href="">Terms of Use</a></li>
+          <li><a href="">Trademarks</a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <script>
+      $(document).ready(function () {
+          // #menu-bar toggling
+          $( "#menu-expand" ).click(function() {
+            $( ".social-actions" ).slideToggle( "fast", function() {
+              // post-animation actions
+            });
+          });
+          
+          // theme switching
+          $( ".menu-theme" ).change(function() {
+            $("body").removeClass().addClass($(".menu-theme select").val());
+            $('#toc').contents().find('body').removeClass().addClass($(".menu-theme select").val());
+          });
+          
+          // In topic TOC
+          var ToC = "<ul>";
+          $("article h2").each(function() {
+            el = $(this);
+            title = el.text();
+            link = "#" + el.attr("id");
+            newLine =
+            "<li>" +
+              "<a href='" + link + "'>" +
+                title +
+              "</a>" +
+            "</li>";
+        
+            ToC += newLine;
+          });
+          ToC += "</ul>";
+          
+          $("aside.toc").append(ToC);
+          
+          // local TOC
+          var toc = buildTOC();
+          $('#sidebar').append(toc);
+          
+          // breadcrumb
+          var breadcrumb = buildGlobalBreadcrumb('', 'conceptual');
+          $('.breadcrumbs').append(breadcrumb);
+          
+          // build share url
+          var shareLink = location.origin + location.pathname;
+          var facebookShareUrl = "https://www.facebook.com/sharer/sharer.php?u=" + shareLink;
+          var twitterShareUrl = "https://twitter.com/intent/tweet?original_referer=" + shareLink + "&text=" + document.title + "&tw_p=tweetbutton&url=" + shareLink;
+          $(".share-facebook").attr("href", facebookShareUrl);
+          $(".share-twitter").attr("href", twitterShareUrl);
+
+          // share toggling
+          $('body').not('.share-container').click(function() {
+            $('.share-container').hide();
+          });
+          $('.sharebutton').click(function() {
+            $('.share-container').toggle();
+            return false;
+          });
+          
+          // social share window control
+          $('.share-container > li > a').click( function() {
+          window.open(this.href, '',  'width=600,height=650');
+            return false;
+          });
+
+          // add alert effect to TIP/NOTE/IMPORTANT/WARNING
+		  $('.TIP, .NOTE, .IMPORTANT, .WARNING').addClass('alert');
+      });
+    </script>
+    {% js _themes/javascript/insight.js %}
+</body></html>

@@ -1,0 +1,13 @@
+{% if children.size > 0 %}
+<ol>{% for item in children %}
+  <li>
+    {% if item.relative_path_in_depot %}
+	  <a href="{{ item.relative_path_in_depot }}.html">{{ item.toc_title }}</a>
+	{% else %}
+	  <a href="/">{{ item.toc_title }}</a>
+	{% endif %}
+	{% assign children = item.children %}
+	{% include tocitems.html with children %}
+  </li>
+{% endfor %}</ol>
+{% endif %}

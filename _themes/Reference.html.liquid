@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<!-- saved from url=(0055)http://weareminky.com/share/ms/docs/reference/sdk/example/ -->
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="ms.pagetype" content="reference" />
+    <meta name="toc" content="{{ page.toc_rel }}" />
+    <meta name="breadcrumb" content="{{ page.breadcrumb_path }}" />
+    <title>{{ page.title }}</title>
+    {% style _themes/css/reference.css %}
+    {% style _themes/css/hopscotch.css %}
+    {% js _themes/javascript/jquery-2.1.4.min.js %}
+    {% js _themes/javascript/simple-expand.min.js %}
+    {% js _themes/javascript/docs.js %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.0.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <nav id="common-nav-placeholder" ms.pgarea="header">
+      <h3>Microsoft</h3>
+      <h5>Common Nav Placeholder</h5>
+    </nav>
+
+    <header id="sub-header" ms.cmpgrp="breadcrumb">
+      <ul class="breadcrumbs"></ul>      
+    </header>
+    
+    <div id="sidebar" ms.cmpgrp="intopic toc">
+      <nav class="navigation">
+      </nav>
+    </div>
+    
+    <div id="main" ms.pgarea="body">
+      <div id="menu-bar-container">
+        <div id="menu-bar">
+          <ul id="menu-actions" class="menu-item menu-group first list-clean" ms.cmpgrp="social">
+            <li><a href="{{ page.content_git_url }}" class="button button-small"><span class="icon icon-edit"></span> Edit</a></li>
+            <li><a href="{{ page.source_url}}" class="button button-small"><i class="fa fa-fw">&#xf121</i> View Source</a></li>
+            <li><a href="#" class="button button-small sharebutton"><span class="icon icon-share"></span> Share</a></li>
+            <li><a href="" class="button button-small"><span class="icon icon-feedback"></span> Feedback</a></li>
+          </ul>
+          <div class="menu-group" ms.cmpgrp="reference menu">
+            {% if page.platforms != null %}
+            <div id="menu-platform" class="menu-item dropdown-container">
+              <label for="dropdown">Platform</label>
+              <div class="dropdown">
+                <select onchange="contentFilter(this.value, $('#menu-lang').find('select').val())">
+                {% for platform in page.platforms %}
+                  <option value="platform-{{ platform }}">{{ platform }}</option>
+                {% endfor %}
+                </select>
+              </div>
+            </div>
+            {% endif %}
+            {% if page.langs != null %}
+            <div id="menu-lang" class="menu-item dropdown-container">
+              <div class="dropdown">
+                <label for="dropdown">Language</label>
+                <select onchange="contentFilter($('#menu-platform').find('select').val(), this.value)">
+                  {% for lang in page.langs %}
+                  <option value="lang-{{ lang }}">{{ lang }}</option>
+                  {% endfor %}
+                </select>
+              </div>
+            </div>
+            {% endif %}
+          </div>
+          <div id="menu-theme" class="dropdown-container menu-group menu-theme">
+            <div class="dropdown">
+              <label for="dropdown">Theme</label>
+              <select>
+                <option value="">Light</option>
+                <option value="theme-night">Dark</option>
+                <option value="theme-hot-dog">Hot Dog</option>
+                <option value="theme-2columns">2 Columns</option>
+                <option value="theme-3columns">3 Columns</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div id="menu-expand">
+          <h6>More <span class="icon icon-down-arrow"></span></h6>
+        </div>
+        <div id="menu-nav" class="dropdown-container">
+          <div class="dropdown dropdown-full mobilenavi">
+            <select>
+            </select>
+          </div>
+        </div>
+      </div>
+      
+      <div class="share-container">
+        <li><a href="" class="share-twitter"><i class="fa fa-fw">&#xf099</i><span> Twitter</span></a></li>
+        <li><a href="" class="share-facebook"><i class="fa fa-fw">&#xf09a</i><span> Facebook</span></a></li>
+        <!--<li><a href="" class="share-slack"><i class="fa fa-fw">&#xf198</i><span> Slack</span></a></li>-->
+      </div>
+
+      <article id="main-content">
+      {{ content }}
+      </article>
+    </div>
+
+    <script>
+      $(document).ready(function() {
+        // code highlighting
+        $('pre code').each(function(i, block) {
+          hljs.highlightBlock(block);
+        });
+
+        // overload expanding
+        $('.expander').simpleexpand();
+
+        // #menu-bar toggling
+        $( "#menu-expand" ).click(function() {
+          $( "#menu-bar" ).slideToggle( "fast", function() {
+            // post-animation actions
+          });
+        });
+
+        // theme switching
+        $( ".menu-theme" ).change(function() {
+          if($(".menu-theme select").val() == 'theme-2columns') {
+            $('.secondary').css('width', '100%');
+            $('.secondary').css('margin-left', '0');
+            $('.secondary').css('padding-left', '0');
+            $('.primary').css('width', '100%');
+            $('.primary').css('float', 'initial');
+          }
+          else if($(".menu-theme select").val() == 'theme-3columns') {
+            $('.secondary').removeAttr('style');
+            $('.primary').removeAttr('style');
+          }
+          else {
+            $("body").removeClass().addClass($(".menu-theme select").val());
+          }
+        });
+        
+        // mobile navi switching
+        $('.mobilenavi').change(function() {
+            var target = '#' + $('.mobilenavi select').val();
+            $(document).scrollTop($(target).offset().top);
+            autoExpand(target);
+        });
+        
+        // update language to friendly name
+        $('#menu-lang').find('option').each( function() {
+          switch($(this).text()) {
+            case 'csharp':
+              $(this).text('C#');
+              break;
+            case 'vb':
+              $(this).text('VB');
+              break;
+            case 'cplusplus':
+              $(this).text('C++');
+              break;
+            default:
+              break;
+          }
+        });
+        
+        // update platform to friendly name
+        $('#menu-platform').find('option').each( function() {
+          switch($(this).text()) {
+            case 'net40':
+              $(this).text('.NET');
+              break;
+            case 'winform40':
+              $(this).text('.NET.WindowsForms');
+              break;
+            case 'wp8':
+              $(this).text('WinPhone');
+              break;
+            case 'sl':
+              $(this).text('WinPhoneSilverlight');
+              break;
+            case 'rt':
+              $(this).text('WinRT');
+              break;
+            default:
+              break;
+          }
+        });
+        
+        // filter platform and language by selection
+        contentFilter($('#menu-platform').find('select').val(), $('#menu-lang').find('select').val());
+        
+        // navigation auto expand clicked section
+        $('body').on('click', '.navigation > ul > li > a', function () { 
+          var target = $(this).attr('href');
+          autoExpand(target);
+        });
+        
+        // add breadcrumb
+        var breadcrumb = buildReferenceBreadcrumb();
+        $('.breadcrumbs').append(breadcrumb);
+        
+        // build share url
+        var shareLink = location.origin + location.pathname;
+        var facebookShareUrl = "https://www.facebook.com/sharer/sharer.php?u=" + shareLink;
+        var twitterShareUrl = "https://twitter.com/intent/tweet?original_referer=" + shareLink + "&text=" + document.title + "&tw_p=tweetbutton&url=" + shareLink;
+        $(".share-facebook").attr("href", facebookShareUrl);
+        $(".share-twitter").attr("href", twitterShareUrl);
+
+        // share toggling
+        $('body').not('.share-container').click(function() {
+          $('.share-container').hide();
+        });
+        $('.sharebutton').click(function() {
+          $('.share-container').toggle();
+          return false;
+        });
+        
+        // social share window control
+        $('.share-container > li > a').click( function() {
+        window.open(this.href, '',  'width=600,height=650');
+          return false;
+        });
+        
+        // add BI tag for code block
+        $('figure').attr('ms.cmpgrp' , 'code');
+
+        // add alert effect to TIP/NOTE/IMPORTANT/WARNING
+        $('.TIP, .NOTE, .IMPORTANT, .WARNING').addClass('alert');
+      });
+    </script>
+    {% js _themes/javascript/insight.js %}
+  </body>
+</html>
